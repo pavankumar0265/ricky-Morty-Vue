@@ -1,7 +1,7 @@
 export function setApiData(state, {data}){
     state.rickyMortyObj.info = data.info;
-    state.rickyMortyObj.result = data.results;
-    state.rickyMortyObj.resultCopy = data.results;
+    state.rickyMortyObj.data = data.results;
+    state.rickyMortyObj.dataCopy = data.results;
     state.pageNumber =1
 }
 
@@ -11,16 +11,16 @@ export function setSearchedValues(state, searchedKeywords) {
 
   export function rickyMortyStateUpdating(state, rickMorty) {
     
-    state.rickyMortyObj.resultCopy = rickMorty;
+    state.rickyMortyObj.dataCopy = rickMorty;
   }
 
   export function setRickMortyApiByPageNumber(state, { data }) {
     state.rickyMortyObj.info = data.info;
-    let oldData = state.rickyMortyObj.result;
+    let oldData = state.rickyMortyObj.data;
     let newData = data.results;
     let result = oldData.concat(newData);
-    state.rickyMortyObj.result = result;
-    state.rickyMortyObj.resultCopy = result;
+    state.rickyMortyObj.data = result;
+    state.rickyMortyObj.dataCopy = result;
 
     state.pageNumber += 1;
   }
