@@ -61,6 +61,9 @@ export const checkboxFiltersUpdatingandDeleting =( step1,step2) => {
       else if(data == "Nupita 4"){
         return filteredData.origin.name.includes(data)
       }
+      else if(data == "Other Origins..."){
+        return filteredData.origin.name.includes("Earth (C-137)")
+      }
     })
     step1 = filteredCards;
   })
