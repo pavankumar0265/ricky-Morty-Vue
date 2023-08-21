@@ -1,6 +1,6 @@
 <template>
-  <div class="flex gap-2 flex-col m-2 p-2 md:flex-row ">
-    <div class="sm:basis-1/4 w-80">
+  <div class="flex gap-2 flex-col m-2 p-2 sm:flex-row">
+    <div class="sm:basis-1/4 w-100">
       <h1>Filters</h1>
 
       <div v-for="filter of checkboxFilters" :key="filter.name">
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="sm:basis-3/4 w-80">
+    <div class="sm:basis-3/4 w-90">
       <h1 class="ml-4">Selected filter</h1>
       <div v-if="checkEmpty" class="ml-3">No Filters Applied</div>
       <div v-else class="flex flex-col md:flex-row">
@@ -46,7 +46,7 @@
           </select>
         </div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
+      <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <div v-for="rickyMorty of rickMortyDataResult" :key="rickyMorty.id">
           <router-link
             :to="{
@@ -79,7 +79,7 @@
 <script setup>
 import { useStore } from "vuex";
 import { computed, onMounted, ref, watch } from "vue";
-import CardList from "../components/CardList.vue";
+import CardList from "../components/CharacterList.vue";
 import Search from "../components/Search.vue";
 
 const store = useStore();
