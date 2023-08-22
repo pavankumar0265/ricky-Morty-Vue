@@ -6,6 +6,7 @@ export async function fetchApiData({ commit }) {
         commit("setApiData", response)
     }
     catch (error) {
+        commit('setErrorMessage', error.message)
         console.log(error)
     }
 }

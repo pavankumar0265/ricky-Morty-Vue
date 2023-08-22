@@ -1,5 +1,5 @@
 export const setSearchedRickMorty = (state) => (keyword) => {
-  if (state.filteredValues.length == 0) {
+  if (state.selectedFilters.length == 0) {
     return state.rickyMortyObj.data.filter((data) =>
       data.name.toLowerCase().includes(keyword.toLowerCase())
     );
@@ -12,7 +12,7 @@ export const setSearchedRickMorty = (state) => (keyword) => {
 };
 
 export function checkEmptyFilterValues(state) {
-  if (state.filteredValues.length == 0) return true;
+  if (state.selectedFilters.length == 0) return true;
 };
 
 export const sortingCards = (state) => (value) => {
@@ -23,20 +23,20 @@ export const sortingCards = (state) => (value) => {
 };
 
 export const checkboxFiltersDelete = (state) => (filterValue) => {
-  let step2 = state.filteredValues.filter((data) => data != filterValue);
+  let step2 = state.selectedFilters.filter((data) => data != filterValue);
   return step2
 }
 export const checkboxFiltersDeletedDataUpdating = (state) => (filterValue) => {
-  if(state.filteredValues.length == 0) return state.rickyMortyObj.data;
+  if(state.selectedFilters.length == 0) return state.rickyMortyObj.data;
   let step1 = JSON.parse(JSON.stringify(state.rickyMortyObj.data));
-  let step2 = state.filteredValues.filter((data) => data != filterValue);
+  let step2 = state.selectedFilters.filter((data) => data != filterValue);
   return checkboxFiltersUpdatingandDeleting(step1,step2)
 }
 
 export const checkboxFiltersUpdating = (state) => {
-  if(state.filteredValues.length == 0) return state.rickyMortyObj.data;
+  if(state.selectedFilters.length == 0) return state.rickyMortyObj.data;
   let step1 = JSON.parse(JSON.stringify(state.rickyMortyObj.data));
-  let step2 = JSON.parse(JSON.stringify(state.filteredValues));
+  let step2 = JSON.parse(JSON.stringify(state.selectedFilters));
   return checkboxFiltersUpdatingandDeleting(step1,step2);
 };
 
@@ -67,7 +67,6 @@ export const checkboxFiltersUpdatingandDeleting =( step1,step2) => {
     })
     step1 = filteredCards;
   })
-  console.log(filteredCards)
   return filteredCards;
 
 }

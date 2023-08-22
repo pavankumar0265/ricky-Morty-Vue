@@ -1,25 +1,25 @@
 export default {
   searchedKeywords: "",
-  filteredValues: [],
+  selectedFilters: [],
   rickyMortyObj: {
     info: {},
     data: [],
     dataCopy: [],
   },
   pageNumber: 1,
-  singleCharacter: {},
+  singleCard: {},
   checkboxFilters: [
     {
-      name: "Species",
-      values: ["Human", "Mytholog", "Other Species..."],
+      label: "Species",
+      name: ["Human", "Mytholog", "Other Species..."],
     },
     {
-      name: "Gender",
-      values: ["Male", "Female"],
+      label: "Gender",
+      name: ["Male", "Female"],
     },
     {
-      name: "Origin",
-      values: [
+      label: "Origin",
+      name: [
         "unknown",
         "Post-Apocalyptic Earth",
         "Nupita 4",
