@@ -1,8 +1,6 @@
 <template>
 <div class="border-4  min-h-screen border-slate-500">
   <button @click="router.go(-1)" class="border-2 m-2 p-2 bg-lime-300">Redirecting  To Home Page</button>
-
-
   <div class="flex flex-col justify-center items-center">
     <img :src="characterCardDetails.image" :alt="characterCardDetails.id" />
     <div>Name - {{ characterCardDetails.name }}</div>
@@ -24,7 +22,7 @@ const props = defineProps({
 
 const router = useRouter();
 const store = useStore();
-const characterCardDetails = computed(() => store.state.singleCharacter);
+const characterCardDetails = computed(() => store.state.singleCard);
 
 onMounted(() => {
   store.dispatch("fetchCharacterById", props.id);

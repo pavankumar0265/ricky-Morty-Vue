@@ -9,9 +9,8 @@ export function setSearchedValues(state, searchedKeywords) {
     state.searchedKeywords = searchedKeywords;
   }
 
-  export function rickyMortyStateUpdating(state, rickMorty) {
-    
-    state.rickyMortyObj.dataCopy = rickMorty;
+  export function rickyMortyStateUpdating(state, data) {
+    state.rickyMortyObj.dataCopy = data;
   }
 
   export function setRickMortyApiByPageNumber(state, { data }) {
@@ -25,12 +24,12 @@ export function setSearchedValues(state, searchedKeywords) {
     state.pageNumber += 1;
   }
   export function setCharacterById(state, { data }) {
-    state.singleCharacter = data;
+    state.singleCard = data;
   }
   export function setErrorMessage(state, message) {
     state.error = message || "error present";
   }
-  export function setFilteredValues(state, filteredValues) {
-    state.filteredValues = filteredValues;
+  export function setFilteredValues(state, selectedFilters) {
+    state.selectedFilters = selectedFilters;
   }
   
